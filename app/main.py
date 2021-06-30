@@ -1,17 +1,37 @@
-from functions import check_numbers, date_time
+from functions import check_numbers, date_time, db,whatsapp_send_message
 
+
+# function to create sqlite table
+def create_db_table():
+    db_connection = db.sqlite_connect()
+    table_created = db.create_table(db_connection)
+    db_connection.close
+    return table_created
+
+# select all messages in the db
+def select_all_messages():
+    db_connection = db.sqlite_connect()
+    db.select_data(db_connection)
+    db_connection.close()
+
+# insert data into db
+def insert_data(data):
+    db_connection = db.sqlite_connect()
+    inserted_data = db.insert_data(db_connection,data)
+    db_connection.close
+    return inserted_data
 
 # user prompted to input recipient's number
 def input_number():
     recipient_number = input("Enter recipient's number(International format e.g +254**********): +")
 
     # validate recipient's number
-    is_valid_number = check_numbers.check_number(recipient_number)
+    is_valid_number = check_numbers.check_phone_number(recipient_number)
 
     # Loop to request for correct number format in case of validation
     while not is_valid_number:
         recipient_number = input("Invalid Number! Please try again. Enter recipient's number: +")
-        is_valid_number = check_numbers.check_number(recipient_number)
+        is_valid_number = check_numbers.check_phone_number(recipient_number)
 
     return recipient_number
 
@@ -92,5 +112,12 @@ def main():
                 send_date_time = send_date + " " + send_time
                 valid_time = date_time.check_date_time_not_passed(date_time_now, send_date_time)
 
+    date_time.countdown_timer(date_time_now, send_date_time)
+    if whatsapp_send_message.send_message(message, recipient_number):
+        data = [date_time_now, message, recipient_number, send_date_time]
+        insert_data(data)
+
+
 if __name__ == "__main__":
     main()
+    select_all_messages()

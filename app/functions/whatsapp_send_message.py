@@ -1,3 +1,4 @@
+# has functions that relate to sending whatsapp message
 # import modules
 import os
 from twilio.rest import Client

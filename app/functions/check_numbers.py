@@ -1,9 +1,10 @@
+# has all functions that relate to validation of numbers
 # import module
 import numbers
 
 
 # function to validate number supplied by user
-def check_number(phonenumber):
+def check_phone_number(phonenumber):
     is_valid = False
     try:
         phonenumber = int(phonenumber)

@@ -1,5 +1,7 @@
+# has functions that relate to date and time
 # import module
 import datetime
+import time
 
 
 # Check time format
@@ -56,3 +58,19 @@ def check_date_time_not_passed(date_time_now, send_date_time):
         return True
     else:
         return False
+
+
+# Countdown till message is sent
+def countdown_timer(date_time_now, send_date_time):
+    time_reached = False
+    date_time_now = datetime.datetime.strptime(date_time_now, "%d/%m/%Y %H:%M")
+    send_date_time = datetime.datetime.strptime(send_date_time, "%d/%m/%Y %H:%M")
+    time_difference = send_date_time - date_time_now
+    time_in_seconds = int(time_difference.total_seconds())
+    while time_in_seconds:
+        print(time_in_seconds, end="\r")
+        time.sleep(1)
+        time_in_seconds -= 1
+    if time_in_seconds == 0:
+        time_reached = True
+    return time_reached

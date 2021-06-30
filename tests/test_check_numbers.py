@@ -6,7 +6,7 @@ from app.functions import check_numbers
 
 
 def test_time_format():
-    time_format = check_numbers.check_number(254714300892)
+    time_format = check_numbers.check_phone_number(254714300892)
     assert time_format == True
 
 
