@@ -29,7 +29,7 @@ From sending messages to people before you forget what you wanted to tell them t
 5. Navigate to the directory app using:
    ```bash
         cd app/
-       ```
+        ```
  6. Finally, run:
     ```bash
         python main.py
