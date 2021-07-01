@@ -16,30 +16,30 @@ The program utilises [Twilio API for Whatsaapp](https://www.twilio.com/docs/what
 
 1. Clone this repository to your local machine using:
     ```bash
-        git clone https://github.com/mainamuriuki274/python_whatsapp_scheduler.git
-      ```
+    git clone https://github.com/mainamuriuki274/python_whatsapp_scheduler.git
+    ```
 2. Checkout into the main branch by using:
-    ```bash 
-       git checkout main
-      ```
+    ```bash
+    git checkout main
+    ```
 3. Create a virtualenv on your machine and activate the virtual environment
 4. Install all the dependencies by using the package manager [pip](https://pip.pypa.io/en/stable/):
     ```bash
-        pip install -r requirements.txt 
-     ``` 
+    pip install -r requirements.txt
+    ``` 
 5. Navigate to the directory app using:
    ```bash
-        cd app/
-      ```
+   cd app/
+   ```
  6. Finally, to execute the project run:
     ```bash
-        python main.py
-       ```
+    python main.py
+    ```
 ## Tests
 The program was tested using [pytest](https://docs.pytest.org/en/6.2.x/). To run pytest ensure that you are within the virtual environment and pytest is installed. You can use [pip](https://pip.pypa.io/en/stable/) to install by running:
-```bash 
-    pip install pytest
-   ```
+```bash
+pip install pytest
+```
  To run all the tests you can use:
  ```bash 
     python -m pytest tests/
