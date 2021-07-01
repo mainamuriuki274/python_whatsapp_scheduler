@@ -35,5 +35,15 @@ The program utilises [Twilio API for Whatsaapp](https://www.twilio.com/docs/what
     ```bash
         python main.py
        ```
-
-
+## Tests
+The program was tested using [pytest](https://docs.pytest.org/en/6.2.x/). To run pytest ensure that you are within the virtual environment and pytest is installed. You can use [pip](https://pip.pypa.io/en/stable/) to install by running:
+```bash 
+    pip install pytest
+   ```
+ To run all the tests you can use:
+ ```bash 
+    python -m pytest tests/
+   ```
+## Credits 
+1. [Lewis Maina](https://github.com/mainamuriuki274/)
+2. [SkaeHub](https://skaehub.com/)
