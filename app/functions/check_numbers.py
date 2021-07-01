@@ -7,7 +7,10 @@ import numbers
 def check_phone_number(phonenumber):
     is_valid = False
     try:
-        phonenumber = int(phonenumber)
+        if any(not phonenumber.isalnum() for p in phonenumber):
+            raise ValueError
+        else:
+            phonenumber = int(phonenumber)
     except ValueError as e:
         is_valid = False
     else:

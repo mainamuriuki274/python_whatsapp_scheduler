@@ -1,25 +1,30 @@
-from functions import check_numbers, date_time, db,whatsapp_send_message
+from functions import check_numbers, date_time, db, whatsapp_send_message
+
+db_file = "/home/maina-muriuki/Documents/python_whatsapp_scheduler/app/db/whatsapp_scheduler.db"
 
 
 # function to create sqlite table
 def create_db_table():
-    db_connection = db.sqlite_connect()
+    db_connection = db.sqlite_connect(db_file)
     table_created = db.create_table(db_connection)
     db_connection.close
     return table_created
 
+
 # select all messages in the db
 def select_all_messages():
-    db_connection = db.sqlite_connect()
+    db_connection = db.sqlite_connect(db_file)
     db.select_data(db_connection)
     db_connection.close()
 
+
 # insert data into db
 def insert_data(data):
-    db_connection = db.sqlite_connect()
-    inserted_data = db.insert_data(db_connection,data)
+    db_connection = db.sqlite_connect(db_file)
+    inserted_data = db.insert_data(db_connection, data)
     db_connection.close
     return inserted_data
+
 
 # user prompted to input recipient's number
 def input_number():

@@ -1,6 +1,8 @@
 # Test to check the time format inputted by user
 import sys
 
+import pytest
+
 sys.path.append("..")
 from app.functions import date_time
 
@@ -18,7 +20,7 @@ def test_get_todays_date():
 
 
 def test_get_time_now():
-    assert date_time.get_time_now() == "00:16"
+    assert date_time.get_time_now() == "13:31"
 
 
 def test_check_date_not_passed():

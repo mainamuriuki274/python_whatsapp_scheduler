@@ -3,8 +3,7 @@ import sqlite3
 
 
 # connecting to the database
-def sqlite_connect():
-    db_file = "/home/maina-muriuki/Documents/python_whatsapp_scheduler/app/db/whatsapp_scheduler.db"
+def sqlite_connect(db_file):
     try:
         sqlite_connection = sqlite3.connect(db_file)
     except sqlite3.Error as error:
@@ -25,23 +24,27 @@ def create_table(sqlite_connection):
                         recipient_number varchar(25),
                         date_time_sent)''')
 
+        cursor.close()
         print("Successfully created table")
+        return True
     except sqlite3.Error as error:
         print("Error while creating table")
-        created_table = False
-    else:
-        created_table = True
-    return created_table
+        return False
 
 
 def insert_data(sqlite_connection, data):
     try:
         cursor = sqlite_connection.cursor()
         # Insert a row of data into messages table
-        cursor.execute(
-            f'INSERT INTO messages (date_time_scheduled,message,recipient_number,date_time_sent) VALUES ("{data[0]}","{data[1]}","{data[2]}","{data[3]}")')
-        if sqlite_connection.commit():
+        if cursor.execute(
+            'INSERT INTO messages (date_time_scheduled,message,recipient_number,date_time_sent) VALUES (?,?,?,?)',
+            (data[0], data[1], data[2], data[3])):
+            sqlite_connection.commit()
+            cursor.close()
             return True
+        else:
+            cursor.close()
+            return False
     except sqlite3.Error as error:
         print("Error while inserting data")
         return False
@@ -51,13 +54,18 @@ def select_data(sqlite_connection):
     # Query all rows in the stocks table
     try:
         cursor = sqlite_connection.cursor()
-        messages = cursor.execute('''SELECT * FROM messages''').fetchall()
+        messages = cursor.execute("SELECT * FROM messages").fetchall()
         if len(messages) > 0:
             print("Messages stored: \n")
             for row in messages:
                 print(row)
+            cursor.close()
+            return messages
         else:
             print("No messages stored yet")
+            cursor.close()
+            return []
 
     except sqlite3.Error as error:
-        print("Error while selecting data", error)
+        print("Error while selecting data")
+        return False
