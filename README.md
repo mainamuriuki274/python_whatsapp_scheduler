@@ -10,7 +10,7 @@ Build a CLI app to schedule whatsapp messages and send them automatically once t
 From sending messages to people before you forget what you wanted to tell them to wishing your loved ones messages such as "Happy Birthday" and "Happy Anniversary" when the day arrives or even for businesses sending their customers important messages during working hours, scheduling saves you from the hassle of remembering and remembers for you. All you have to do is set the message, the recipient's number and the time and yout message will be delivered at that time.
 
 ## How it works
-The program utilises [Twilio API for Whatsaapp] (https://www.twilio.com/docs/whatsapp/quickstart/python) to **only** send messages and [Python] (https://www.python.org/)'s in-built libraries like [datetime] (https://docs.python.org/3/library/datetime.html) and [time] (https://docs.python.org/3/library/time.html) to schedule the messages. 
+The program utilises [Twilio API for Whatsaapp](https://www.twilio.com/docs/whatsapp/quickstart/python) to **only** send messages and [Python](https://www.python.org/) 's in-built libraries like [datetime](https://docs.python.org/3/library/datetime.html) and [time](https://docs.python.org/3/library/time.html) to schedule the messages. 
 
 ## Installation and setup
 
@@ -23,7 +23,7 @@ The program utilises [Twilio API for Whatsaapp] (https://www.twilio.com/docs/wha
        git checkout main
       ```
 3. Create a virtualenv on your machine and activate the virtual environment
-4. Install all the dependencies by using the package manager (https://pip.pypa.io/en/stable/):
+4. Install all the dependencies by using the package manager [pip](https://pip.pypa.io/en/stable/):
     ```bash
         pip install -r requirements.txt 
      ``` 
@@ -31,7 +31,7 @@ The program utilises [Twilio API for Whatsaapp] (https://www.twilio.com/docs/wha
    ```bash
         cd app/
       ```
- 6. Finally, run:
+ 6. Finally, to execute the project run:
     ```bash
         python main.py
        ```
