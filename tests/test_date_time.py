@@ -20,7 +20,7 @@ def test_get_todays_date():
 
 
 def test_get_time_now():
-    assert date_time.get_time_now() == "13:31"
+    assert date_time.get_time_now() == "14:37"
 
 
 def test_check_date_not_passed():
