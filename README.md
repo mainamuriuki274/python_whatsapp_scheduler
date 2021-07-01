@@ -25,11 +25,11 @@ From sending messages to people before you forget what you wanted to tell them t
 4. Install all the dependencies by using the package manager (https://pip.pypa.io/en/stable/):
     ```bash
         pip install -r requirements.txt 
-       ``` 
+     ``` 
 5. Navigate to the directory app using:
    ```bash
         cd app/
-        ```
+      ```
  6. Finally, run:
     ```bash
         python main.py
