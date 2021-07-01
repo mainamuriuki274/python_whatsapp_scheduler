@@ -10,6 +10,7 @@ Build a CLI app to schedule whatsapp messages and send them automatically once t
 From sending messages to people before you forget what you wanted to tell them to wishing your loved ones messages such as "Happy Birthday" and "Happy Anniversary" when the day arrives or even for businesses sending their customers important messages during working hours, scheduling saves you from the hassle of remembering and remembers for you. All you have to do is set the message, the recipient's number and the time and yout message will be delivered at that time.
 
 ## How it works
+The program utilises [Twilio API for Whatsaapp] (https://www.twilio.com/docs/whatsapp/quickstart/python) to **only** send messages and [Python] (https://www.python.org/)'s in-built libraries like [datetime] (https://docs.python.org/3/library/datetime.html) and [time] (https://docs.python.org/3/library/time.html) to schedule the messages. 
 
 ## Installation and setup
 
