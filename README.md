@@ -42,8 +42,8 @@ pip install pytest
 ```
  To run all the tests you can use:
  ```bash 
-    python -m pytest tests/
-   ```
+ python -m pytest tests/
+ ```
 ## Credits 
 1. [Lewis Maina](https://github.com/mainamuriuki274/)
 2. [SkaeHub](https://skaehub.com/)
