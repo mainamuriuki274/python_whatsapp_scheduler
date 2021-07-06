@@ -88,13 +88,16 @@ def save_number(recipients_number):
             "2. No\n")
         is_valid_choice = check_numbers.check_options(save_numbers)
     if save_numbers == "1" and is_valid_choice == True:
+        stored_names = []
+        for contact in contacts:
+            stored_names.append(contact[1])
+        print("Currently saved(Not available):", stored_names)
         name = input("Please enter a unique name for the contact list: ")
         is_valid_name = any(name for n in contacts if n[1] == name)
-        print(name for n in contacts if n.name == name)
         while is_valid_name:
             name = input("Please enter a unique name for the contact list: ")
             is_valid_name = any(name for n in contacts if n[1] == name)
-        print("Successfully saved contact list: ",name)
+        print("Successfully saved contact list: ", name)
         if not is_valid_name:
             contact_list = [name, str(recipients_number)]
             return insert_contacts(contact_list)
