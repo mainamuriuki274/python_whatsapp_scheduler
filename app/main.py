@@ -141,7 +141,6 @@ def input_phonenumber():
                     n += 1
                 name = input("Please enter the name of the contact list you want to send the message: ")
                 is_valid_name = any(name for n in contacts if n[1] == name)
-                print(name for n in contacts if n.name == name)
                 while not is_valid_name:
                     name = input("Invalid name! Please enter the name of the contact list you want to send the "
                                  "message: ")
