@@ -3,6 +3,7 @@ from functions import check_numbers, date_time, db, whatsapp_send_message
 
 db_file = os.path.dirname(os.path.abspath(__file__)) + "/db/whatsapp_scheduler.db"
 
+
 # function to create sqlite table
 def create_db_tables():
     db_connection = db.sqlite_connect(db_file)
@@ -110,7 +111,7 @@ def input_phonenumber():
     recipients_number = []
     if number_of_phonenumbers == "1":
         phonenumber = get_phonenumber()
-        while not phonenumber == "done":
+        while phonenumber == "done":
             phonenumber = get_phonenumber()
 
         # Add phonenumber to list
