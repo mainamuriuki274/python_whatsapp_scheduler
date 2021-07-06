@@ -110,6 +110,9 @@ def input_phonenumber():
     recipients_number = []
     if number_of_phonenumbers == "1":
         phonenumber = get_phonenumber()
+        while not phonenumber == "done":
+            phonenumber = get_phonenumber()
+
         # Add phonenumber to list
         recipients_number.append(phonenumber)
     elif number_of_phonenumbers == "2":
