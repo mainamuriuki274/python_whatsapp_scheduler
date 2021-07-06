@@ -184,7 +184,7 @@ def input_time():
     while not valid_time_format:
         send_time = input("Invalid Time! Please Enter the time to send message (Use 24-format e.g HH:MM): ")
         valid_time_format = date_time.check_time_format(send_time)
-    return send_time
+    return send_time + ":00"
 
 
 # user prompted to input date to send message

@@ -28,8 +28,8 @@ def test_check_date_not_passed():
 
 
 def test_check_date_time_not_passed():
-    assert date_time.check_date_time_not_passed("30/06/2021 14:46", "1/07/2021 15:30") == True
+    assert date_time.check_date_time_not_passed("30/06/2021 14:46:00", "1/07/2021 15:30:00") == True
 
 
 def test_countdown_timer():
-    assert date_time.check_date_time_not_passed("30/06/2021 14:46", "30/06/2021 14:47") == True
+    assert date_time.check_date_time_not_passed("30/06/2021 14:46:00", "30/06/2021 14:47:00") == True

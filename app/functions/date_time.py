@@ -37,7 +37,7 @@ def get_todays_date():
 
 # get the time NOW
 def get_time_now():
-    return datetime.datetime.now().strftime("%H:%M")
+    return datetime.datetime.now().strftime("%H:%M:%S")
 
 
 # Check date given has not passed
@@ -52,8 +52,8 @@ def check_date_not_passed(today_date, send_date):
 
 # Check time given has not passed
 def check_date_time_not_passed(date_time_now, send_date_time):
-    date_time_now = datetime.datetime.strptime(date_time_now, "%d/%m/%Y %H:%M")
-    send_date_time = datetime.datetime.strptime(send_date_time, "%d/%m/%Y %H:%M")
+    date_time_now = datetime.datetime.strptime(date_time_now, "%d/%m/%Y %H:%M:%S")
+    send_date_time = datetime.datetime.strptime(send_date_time, "%d/%m/%Y %H:%M:%S")
     if date_time_now <= send_date_time:
         return True
     else:
@@ -63,8 +63,8 @@ def check_date_time_not_passed(date_time_now, send_date_time):
 # Countdown till message is sent
 def countdown_timer(date_time_now, send_date_time):
     time_reached = False
-    date_time_now = datetime.datetime.strptime(date_time_now, "%d/%m/%Y %H:%M")
-    send_date_time = datetime.datetime.strptime(send_date_time, "%d/%m/%Y %H:%M")
+    date_time_now = datetime.datetime.strptime(date_time_now, "%d/%m/%Y %H:%M:%S")
+    send_date_time = datetime.datetime.strptime(send_date_time, "%d/%m/%Y %H:%M:%S")
     time_difference = send_date_time - date_time_now
     time_in_seconds = int(time_difference.total_seconds())
     while time_in_seconds:
